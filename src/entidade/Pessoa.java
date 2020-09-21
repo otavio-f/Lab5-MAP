@@ -30,4 +30,36 @@ public class Pessoa {
 		this.matricula = matricula;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (matricula ^ (matricula >>> 32));
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Pessoa)) {
+			return false;
+		}
+		Pessoa other = (Pessoa) obj;
+		if (matricula != other.matricula) {
+			return false;
+		}
+		if (nome == null) {
+			if (other.nome != null) {
+				return false;
+			}
+		} else if (!nome.equals(other.nome)) {
+			return false;
+		}
+		return true;
+	}
+
+	
 }

@@ -1,28 +1,40 @@
 package entidade;
 
-import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Horario {
-	private DayOfWeek dia;
+	public enum Dia{
+		SEGUNDA("segunda"), TERCA("terça"), QUARTA("quarta"), QUINTA("quinta"), SEXTA("sexta"), SABADO("sábado"), DOMINGO("domingo");
+		private String val;
+		
+		Dia(String val) {
+			this.val = val;
+		}
+		
+		public String getVal() {
+			return this.val;
+		}
+	}
+	
+	private Dia dia;
 	private LocalTime hora;
 	
-	public Horario(DayOfWeek dia, int hora, int minuto) {
+	public Horario(Dia dia, int hora, int minuto) {
 		this.hora = LocalTime.of(hora, minuto);
 		this.dia = dia;
 	}
 	
-	public Horario(DayOfWeek dia, String hora) {
+	public Horario(Dia dia, String hora) {
 		this.hora = LocalTime.parse(hora, DateTimeFormatter.ofPattern("HH:mm"));
 		this.dia = dia;
 	}
 	
-	public DayOfWeek getDia() {
+	public Dia getDia() {
 		return dia;
 	}
 	
-	public void setDia(DayOfWeek dia) {
+	public void setDia(Dia dia) {
 		this.dia = dia;
 	}
 	
@@ -36,6 +48,15 @@ public class Horario {
 	
 	public void setHora(String hora) {
 		this.hora = LocalTime.parse(hora, DateTimeFormatter.ofPattern("HH:mm"));
+	}
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"%s - %s",
+				dia.getVal(),
+				this.hora.format(DateTimeFormatter.ofPattern("HH:mm"))
+				);
 	}
 
 }

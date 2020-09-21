@@ -24,5 +24,10 @@ public class Disciplina {
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("Disciplina: %s\tCódigo: %s", nome, (int) codigo);
+	}
 
 }

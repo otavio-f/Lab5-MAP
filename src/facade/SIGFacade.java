@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import administrativo.Administrativo;
+import administrativo.Evento.TipoEvento;
 import almoxarifado.Almoxarifado;
 import entidade.Aluno;
 import entidade.Disciplina;

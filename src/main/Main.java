@@ -3,7 +3,6 @@ package main;
 import entidade.Horario;
 import entidade.Horario.Dia;
 import facade.SIGFacade;
-import sistemas.Reuniao;
 
 public class Main {
 
@@ -46,9 +45,13 @@ public class Main {
 		sig.adicionarReuniao("Orientação acerca de novos equipamentos", "23/11/2018", "12:00");
 		sig.adicionarReuniao("Discussão dos orientadores", "03/01/2021", "13:00");
 		
+		sig.adicionarEntrevista("Dra. Josefa", "30/03/2021", "13:00");
+		
 		System.out.println("* Informações administrativas");
 		System.out.println("REUNIÕES");
 		System.out.println(sig.reunioesAgendadas());
+		System.out.println("ENTREVISTAS");
+		System.out.println(sig.entrevistas());
 		
 		System.out.println("\n* Informações financeiras");
 		

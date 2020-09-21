@@ -156,5 +156,57 @@ public class SIGFacade {
 					);
 		return resultado;
 	}
+	
+	//MANIPULA플O DAS INFORMA합ES ADMINISTRATIVAS
+		public void cadastrarEventosAdmin(TipoEvento tipo, String data) {
+			administrativo.cadastrarEvento(tipo, data);
+		}
+		
+		public String listarEventosAdmin() {
+			return administrativo.listarEventos();
+		}
+		
+		//MANIPULA플O DAS INFORMA합ES DO ALMOXARIFADO
+		public void inserirNoEstoque(String produto, int quantidade) {
+			almoxarifado.inserirNoEstoque(produto, quantidade);
+		}
+		
+		public void realizarPedido(String produto, int quantidade) {
+			almoxarifado.realizarPedido(produto, quantidade);
+		}
+		
+		public String consultarEstoque() {
+			return almoxarifado.listarEstoque();
+		}
+		
+		public String consultarListaPedidos() {
+			return almoxarifado.listarPedidos();
+		}
+		
+		//MANIPULA플O DAS INFORMA합ES DO FINANCEIRO
+		public void novaFolhaDePagamento(String mes) {
+			financeiro.novaFolhaDePagamento(mes);
+		}
+		
+		public void novoBalanco(String mes) {
+			financeiro.novoBalancoDeContas(mes);
+		}
+		
+		public void adicionarFuncionarioAFolha(int folha, String nome, double salario){
+			financeiro.addFuncionarioAFolha(folha, nome, salario);
+		}
+		
+		public void adicionarContaBalanco(int balanco, String conta, double valor) {
+			financeiro.addContaAoBalanco(balanco, conta, valor);
+		}
+		
+		public String consultarFolhaDePagamento(int mes) {
+			return financeiro.consultarInfoFolha(mes);
+		}
+		
+		public String consultarBalanco(int mes) {
+			return financeiro.consultarBalanco(mes);
+		}
+		
 
 }

@@ -3,19 +3,23 @@ package entidade;
 import java.util.ArrayList;
 import java.util.List;
 
-import entidade.Horario.Dia;
-
 public class Turma {
 	private Horario horario;
 	private List<Aluno> alunos;
 	private Disciplina disciplina;
 	private Professor professor;
+	private long codigo;
 	
-	public Turma(Disciplina disciplina, Professor professor, Horario horario) {;
+	public Turma(Disciplina disciplina, Professor professor, Horario horario, long codigo) {;
 		this.alunos = new ArrayList<Aluno>();
 		this.disciplina = disciplina;
 		this.professor = professor;
 		this.horario = horario;
+		this.codigo = codigo;
+	}
+	
+	public long getCodigo() {
+		return this.codigo;
 	}
 	
 	public void adicionarAluno(Aluno aluno) {
@@ -57,7 +61,8 @@ public class Turma {
 	@Override
 	public String toString() {
 		String resultado = String.format(
-				"Turma: %s\tProfessor: %s\tHorario: %s",
+				"Turma %s - %s\tProfessor: %s\tHorario: %s",
+				(int) this.codigo,
 				this.disciplina.getNome(),
 				this.professor.getNome(),
 				this.horario

@@ -58,6 +58,10 @@ public class Turma {
 		this.professor = professor;
 	}
 	
+	public boolean isMatriculado(Aluno aluno) {
+		return this.alunos.contains(aluno);
+	}
+	
 	@Override
 	public String toString() {
 		String resultado = String.format(
@@ -68,9 +72,5 @@ public class Turma {
 				this.horario
 				);
 		return resultado;
-	}
-
-	public boolean isMatriculado(Aluno aluno) {
-		return this.alunos.contains(aluno);
 	}
 }

@@ -3,6 +3,7 @@ package main;
 import entidade.Horario;
 import entidade.Horario.Dia;
 import facade.SIGFacade;
+import sistemas.Reuniao;
 
 public class Main {
 
@@ -16,7 +17,7 @@ public class Main {
 		sig.adicionarProfessor("Mário", 1656);
 		
 		sig.adicionarDisciplina("Contabilidade Avançada", 12);
-		sig.adicionarDisciplina("Meditação", 313);
+		sig.adicionarDisciplina("Computação Básica", 313);
 		
 		sig.adicionarTurma(
 				sig.encontrarDisciplina(12),
@@ -31,11 +32,20 @@ public class Main {
 				new Horario(Dia.SEXTA, "19:30"),
 				133146
 				);
+
+		sig.adicionarTurma(
+				sig.encontrarDisciplina(313),
+				sig.encontrarProfessor(7777),
+				new Horario(Dia.SEGUNDA, "14:00"),
+				133146
+				);
 		
 		sig.encontrarTurma(133145).adicionarAluno(sig.encontrarAluno(1234321));
 		sig.encontrarTurma(133146).adicionarAluno(sig.encontrarAluno(3339000));
 		
 		System.out.println("* Informações administrativas");
+		System.out.println("REUNIÕES");
+		System.out.println(new Reuniao("Orientação acerca de novos equipamentos", "23/11/2018", "12:00"));
 		
 		System.out.println("\n* Informações financeiras");
 		

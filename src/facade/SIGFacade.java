@@ -8,6 +8,7 @@ import entidade.Disciplina;
 import entidade.Horario;
 import entidade.Professor;
 import entidade.Turma;
+import sistemas.Reuniao;
 
 public class SIGFacade {
 	
@@ -16,11 +17,15 @@ public class SIGFacade {
 	private List<Disciplina> disciplinas;
 	private List<Turma> turmas;
 	
+	private List<Reuniao> reunioes;
+	
 	public SIGFacade() {
 		this.alunos = new ArrayList<Aluno>();
 		this.professores = new ArrayList<Professor>();
 		this.disciplinas = new ArrayList<Disciplina>();
 		this.turmas = new ArrayList<Turma>();
+		
+		this.reunioes = new ArrayList<Reuniao>();
 	}
 	
 	public void adicionarTurma(Disciplina disc, Professor prof, Horario horario, long codigo) {
@@ -67,8 +72,15 @@ public class SIGFacade {
 		return null;
 	}
 	
+	public void adicionarReuniao(String assunto, String data, String hora) {
+		this.reunioes.add(new Reuniao(assunto, data, hora));	
+	}
+
 	public String reunioesAgendadas() {
-		return null;
+		String resultado = "Marcadas:";
+		for(Reuniao r: reunioes)
+			resultado += "\n"+r.toString();
+		return resultado;
 	}
 	
 	public String entrevistas() {
@@ -114,5 +126,6 @@ public class SIGFacade {
 	public String alocacao() {
 		return null;
 	}
+
 
 }

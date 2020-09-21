@@ -43,9 +43,12 @@ public class Main {
 		sig.encontrarTurma(133145).adicionarAluno(sig.encontrarAluno(1234321));
 		sig.encontrarTurma(133146).adicionarAluno(sig.encontrarAluno(3339000));
 		
+		sig.adicionarReuniao("Orientação acerca de novos equipamentos", "23/11/2018", "12:00");
+		sig.adicionarReuniao("Discussão dos orientadores", "03/01/2021", "13:00");
+		
 		System.out.println("* Informações administrativas");
 		System.out.println("REUNIÕES");
-		System.out.println(new Reuniao("Orientação acerca de novos equipamentos", "23/11/2018", "12:00"));
+		System.out.println(sig.reunioesAgendadas());
 		
 		System.out.println("\n* Informações financeiras");
 		

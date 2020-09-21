@@ -3,11 +3,14 @@ package facade;
 import java.util.ArrayList;
 import java.util.List;
 
+import administrativo.Administrativo;
+import almoxarifado.Almoxarifado;
 import entidade.Aluno;
 import entidade.Disciplina;
 import entidade.Horario;
 import entidade.Professor;
 import entidade.Turma;
+import financeiro.Financeiro;
 import sistemas.Entrevista;
 import sistemas.Reuniao;
 
@@ -21,6 +24,10 @@ public class SIGFacade {
 	private List<Reuniao> reunioes;
 	private List<Entrevista> entrevistas;
 	
+	private Administrativo administrativo;
+	private Almoxarifado almoxarifado;
+	private Financeiro financeiro;
+	
 	public SIGFacade() {
 		this.alunos = new ArrayList<Aluno>();
 		this.professores = new ArrayList<Professor>();
@@ -29,6 +36,11 @@ public class SIGFacade {
 		
 		this.reunioes = new ArrayList<Reuniao>();
 		this.entrevistas = new ArrayList<Entrevista>();
+		
+		this.administrativo = new Administrativo();
+		this.almoxarifado = new Almoxarifado();
+		this.financeiro = new Financeiro();
+		
 	}
 	
 	public void adicionarTurma(Disciplina disc, Professor prof, Horario horario, String sala, long codigo) {

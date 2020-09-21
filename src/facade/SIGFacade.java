@@ -126,24 +126,12 @@ public class SIGFacade {
 		return resultado;
 	}
 	
-	public String tempoDeCasa(Professor prof) {
-		return null;
-	}
-	
-	public String historico(Aluno aluno) {
-		return null;
-	}
-	
 	public String rdm(Aluno aluno) {
 		String resultado = aluno.toString()+"\nTurmas matriculadas:";
 		for(Turma t: turmas)
 			if(t.isMatriculado(aluno))
 				resultado += "\n" + t.toString();
 		return resultado;
-	}
-	
-	public String estoque() {
-		return null;
 	}
 	
 	public String alocacaoDeSalas() {

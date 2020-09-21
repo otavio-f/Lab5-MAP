@@ -55,6 +55,8 @@ public class Main {
 		sig.adicionarEntrevista("Dra. Josefa", "30/03/2021", "13:00");
 		sig.adicionarEntrevista("Sindicato", "30/12/2020", "23:00");
 		
+
+		
 		System.out.println("* Informações administrativas");
 		System.out.println("REUNIÕES");
 		System.out.println(sig.reunioesAgendadas());
@@ -72,11 +74,8 @@ public class Main {
 		System.out.println(sig.rdm(sig.encontrarAluno(1234321)));
 		
 		System.out.println("\n* Informações relacionadas ao almoxarifado");
-		
-		System.out.println("\n* Informações de infra-estrutura");
-		System.out.println(sig.alocacaoDeSalas());
-		
-		sig.alocacaoDeSalas()
+
+	
 
 	}
 

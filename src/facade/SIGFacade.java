@@ -31,8 +31,8 @@ public class SIGFacade {
 		this.entrevistas = new ArrayList<Entrevista>();
 	}
 	
-	public void adicionarTurma(Disciplina disc, Professor prof, Horario horario, long codigo) {
-		this.turmas.add(new Turma(disc, prof, horario, codigo));
+	public void adicionarTurma(Disciplina disc, Professor prof, Horario horario, String sala, long codigo) {
+		this.turmas.add(new Turma(disc, prof, horario, sala, codigo));
 	}
 	
 	public Turma encontrarTurma(long cod) {
@@ -133,8 +133,16 @@ public class SIGFacade {
 		return null;
 	}
 	
-	public String alocacao() {
-		return null;
+	public String alocacaoDeSalas() {
+		String resultado = "";
+		for(Turma t: turmas)
+			resultado += String.format(
+					"\nSala %s: %s (%s)",
+					t.getSala(),
+					t.getDisciplina().getNome(),
+					(int) t.getCodigo()
+					);
+		return resultado;
 	}
 
 }

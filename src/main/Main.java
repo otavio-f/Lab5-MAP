@@ -22,6 +22,7 @@ public class Main {
 				sig.encontrarDisciplina(12),
 				sig.encontrarProfessor(7777),
 				new Horario(Dia.QUARTA, "07:30"),
+				"B133",
 				133145
 				);
 		
@@ -29,6 +30,7 @@ public class Main {
 				sig.encontrarDisciplina(12),
 				sig.encontrarProfessor(7777),
 				new Horario(Dia.SEXTA, "19:30"),
+				"A43",
 				133146
 				);
 
@@ -36,6 +38,7 @@ public class Main {
 				sig.encontrarDisciplina(313),
 				sig.encontrarProfessor(7777),
 				new Horario(Dia.SEGUNDA, "14:00"),
+				"Lab 2",
 				133146
 				);
 		
@@ -46,6 +49,7 @@ public class Main {
 		sig.adicionarReuniao("Discussão dos orientadores", "03/01/2021", "13:00");
 		
 		sig.adicionarEntrevista("Dra. Josefa", "30/03/2021", "13:00");
+		sig.adicionarEntrevista("Sindicato", "30/12/2020", "23:00");
 		
 		System.out.println("* Informações administrativas");
 		System.out.println("REUNIÕES");
@@ -66,6 +70,7 @@ public class Main {
 		System.out.println("\n* Informações relacionadas ao almoxarifado");
 		
 		System.out.println("\n* Informações de infra-estrutura");
+		System.out.println(sig.alocacaoDeSalas());
 
 	}
 

@@ -8,14 +8,20 @@ public class Turma {
 	private List<Aluno> alunos;
 	private Disciplina disciplina;
 	private Professor professor;
+	private String sala;
 	private long codigo;
 	
-	public Turma(Disciplina disciplina, Professor professor, Horario horario, long codigo) {;
+	public Turma(Disciplina disciplina, Professor professor, Horario horario, String sala, long codigo) {;
 		this.alunos = new ArrayList<Aluno>();
 		this.disciplina = disciplina;
 		this.professor = professor;
 		this.horario = horario;
+		this.sala = sala;
 		this.codigo = codigo;
+	}
+	
+	public String getSala() {
+		return this.sala;
 	}
 	
 	public long getCodigo() {
@@ -65,11 +71,12 @@ public class Turma {
 	@Override
 	public String toString() {
 		String resultado = String.format(
-				"Turma %s - %s\tProfessor: %s\tHorario: %s",
+				"Turma %s - %s\tProfessor: %s\tHorario: %s\tSala: %s",
 				(int) this.codigo,
 				this.disciplina.getNome(),
 				this.professor.getNome(),
-				this.horario
+				this.horario,
+				this.sala
 				);
 		return resultado;
 	}

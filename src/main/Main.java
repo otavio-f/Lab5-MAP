@@ -9,15 +9,19 @@ public class Main {
 	public static void main(String[] args) {
 		SIGFacade sig = new SIGFacade();
 		
+		//ADICIONANDO ALUNOS
 		sig.adicionarAluno("Otavio", 1234321);
 		sig.adicionarAluno("Rafael", 3339000);
 		
+		//ADICIONANDO PROFESSORES
 		sig.adicionarProfessor("Júlia", 7777);
 		sig.adicionarProfessor("Mário", 1656);
 		
+		//ADICIONANDO DISCIPLINAS
 		sig.adicionarDisciplina("Contabilidade Avançada", 12);
 		sig.adicionarDisciplina("Computação Básica", 313);
 		
+		//ADICIONANDO TURMAS
 		sig.adicionarTurma(
 				sig.encontrarDisciplina(12),
 				sig.encontrarProfessor(7777),
@@ -71,6 +75,8 @@ public class Main {
 		
 		System.out.println("\n* Informações de infra-estrutura");
 		System.out.println(sig.alocacaoDeSalas());
+		
+		sig.alocacaoDeSalas()
 
 	}
 

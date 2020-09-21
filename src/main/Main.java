@@ -4,7 +4,7 @@ import entidade.Horario;
 import entidade.Horario.Dia;
 import facade.SIGFacade;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
 		SIGFacade sig = new SIGFacade();
